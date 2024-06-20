@@ -98,7 +98,7 @@ const SignupForm = ({ onClose }) => {
                             type="password"
                             placeholder="********"
                         />
-                        <p className="text-gray-600 text-xs italic">La contraseña debe tener al menos 5 caracteres y ser alfanumérica</p>
+                        <p className="text-gray-600 text-xs italic">La contraseña debe tener al menos 5 caracteres. Ser recomienda caracteres alfanuméricos</p>
                         {errors.password && <p className="text-red-500 text-xs italic">{errors.password.message}</p>}
                     </div>
 
