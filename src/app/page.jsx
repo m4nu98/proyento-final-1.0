@@ -6,14 +6,13 @@ import "../app/globals.css"
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 import Link from "next/link"
+import Footer from "../components/Footer"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import Header from '@/components/barraNavegacion';
 
 export default function Component() {
   return (
     <>
-    <Header />
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
         <section className=" centrar bg-gray-900 text-white py-12 md:py-24 lg:py-32">
@@ -159,20 +158,6 @@ export default function Component() {
           </div>
         </section>
       </main>
-      <footer className="bg-gray-900 text-white px-4 lg:px-6 py-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm">&copy; 2024 Cleaning Pros. All rights reserved.</p>
-        <nav className="flex gap-4 sm:gap-6">
-          <Link href="#" className="hover:underline" prefetch={false}>
-            Privacy Policy
-          </Link>
-          <Link href="#" className="hover:underline" prefetch={false}>
-            Terms of Service
-          </Link>
-          <Link href="#" className="hover:underline" prefetch={false}>
-            Contact Us
-          </Link>
-        </nav>
-      </footer>
     </div>
     </>)
 }

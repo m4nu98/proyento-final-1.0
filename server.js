@@ -31,10 +31,22 @@ app.post('/api/usuarios', async (req, res) => {
         // Respuesta exitosa
         res.status(201).json({ mensaje: 'Usuario registrado exitosamente' });
     } catch (error) {
-        console.error('Error al registrar usuario:', error); // Registra el error en la consola del servidor
-        res.status(500).json({ mensaje: 'Error al registrar usuario' });
+        console.error('Error al registrar usuario:', error); 
+        if (error.code === 11000) { // Verifica si es un error de correo duplicado
+            res.status(409).json({ 
+                error: 'duplicate_email', 
+                mensaje: 'Este correo electrónico ya está registrado. Por favor, utiliza otro.' 
+            });
+        } else {
+            res.status(500).json({ 
+                error: 'server_error', 
+                mensaje: 'Error al registrar usuario. Inténtalo de nuevo más tarde.' 
+            });
+        }
     }
 });
+
+
 
 // Ruta para manejar el inicio de sesión de usuarios
 app.post('/api/login', async (req, res) => {
