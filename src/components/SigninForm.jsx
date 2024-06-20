@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 const SigninForm = ({ onClose }) => {
     const [errorFromServer, setErrorFromServer] = useState('');
 
@@ -33,7 +35,7 @@ const SigninForm = ({ onClose }) => {
             onClose(); // Cierra el formulario modal después del inicio de sesión exitoso
         } catch (error) {
             console.error('Error al enviar datos:', error);
-            setErrorFromServer('Contraseña o Email incorecctos');
+            setErrorFromServer('Contraseña o Email incorrectos');
         }
     };
 
@@ -90,3 +92,4 @@ const SigninForm = ({ onClose }) => {
     );
 };
 
+export default SigninForm;
